@@ -44,7 +44,7 @@ Resources:
     Properties:
       Parameters:
         AppName: !Ref AppName
-      TemplateURL: "https://github.com/dthesiya/test-samfarm-repo/blob/master/change/samfarm-pipeline-roles.yaml"
+      TemplateURL: "https://s3.amazonaws.com/myteststack-s3bucket-18fi8z6zglddl/change/samfarm-pipeline-roles.yaml"
   ServerlessPipeline:
     Type: "AWS::CloudFormation::Stack"
     DependsOn: [ServerlessRoles]
@@ -62,4 +62,4 @@ Resources:
         CodePipelineRole: !GetAtt ServerlessRoles.Outputs.CodePipelineRole
         CloudformationRole: !GetAtt ServerlessRoles.Outputs.CloudformationDeployRole
         CodeBuildRole: !GetAtt ServerlessRoles.Outputs.CodeBuildRole
-      TemplateURL: "https://github.com/dthesiya/test-samfarm-repo/blob/master/change/samfarm-pipeline.yaml"
+      TemplateURL: "https://s3.amazonaws.com/myteststack-s3bucket-18fi8z6zglddl/change/samfarm-pipeline.yaml"
